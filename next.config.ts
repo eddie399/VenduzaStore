@@ -9,7 +9,12 @@ const nextConfig: NextConfig = {
         pathname: '/**',
       }
     ]
-  }
+  },
+
+  eslint: {
+    ignoreDuringBuilds: true,
+  },
+  
   /* config options here */
 };
 

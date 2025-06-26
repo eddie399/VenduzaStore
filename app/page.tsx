@@ -3,8 +3,8 @@ import { stripe } from "@/lib/stripe";
 import { Button } from "@/components/ui/button";
 import Link from "next/link";
 import { Carousel } from "@/components/carousel";
-import { ProductCard } from "@/components/ProductCard";
-import Stripe from "stripe";
+
+
 
 
 
@@ -67,7 +67,7 @@ export default async function Home() {
         <div className="flex flex-col items-center justify-center md:flex-row my-10 gap-4 md:gap-8">
          {Categories.map((cart) =>{
             return (
-              <button className="bg-gray-500 text-white rounded-md py-2 px-4">
+              <button key={cart} className="bg-gray-500 text-white rounded-md py-2 px-4">
                 {cart}
               </button>
             )

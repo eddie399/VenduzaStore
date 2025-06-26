@@ -13,7 +13,7 @@ interface Props {
     product: Stripe.Product;
 }
 
-export default function CheckoutPage({product}: Props) {
+export default function CheckoutPage() {
   const { items, removeItem, addItem, clearCart } = useCartStore();
   const total = items.reduce(
     (acc, item) => acc + item.price * item.quantity,

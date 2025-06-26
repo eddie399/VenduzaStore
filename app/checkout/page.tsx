@@ -62,12 +62,7 @@ export default function CheckoutPage() {
                     +
                   </Button>
                 </div>
-                {item.image && (
-                    <Image 
-                    alt="image"
-                    src={item.image }
-                   />
-                )}
+                
                 
 
               </li>

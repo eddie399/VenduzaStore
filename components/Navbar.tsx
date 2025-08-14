@@ -28,7 +28,7 @@ export const Navbar = () => {
   }, []);
 
   return (
-    <nav className="sticky top-0 z-50 bg-[#1E2A38] text-white shadow rounded-b-lg">
+    <nav className="sticky top-0 z-50 bg-[#052a3d] text-white shadow">
       <div className="container mx-auto flex items-center justify-between px-4 py-4">
         <Link href="/" className="hover:text-blue-600 text-2xl font-bold">
     
@@ -37,6 +37,7 @@ export const Navbar = () => {
            width={180}
            height={120}
            src="/venduza.png"
+           className="w-40 h-auto"
           />
 
 
@@ -65,34 +66,38 @@ export const Navbar = () => {
             onClick={() => setMobileOpen((prev) => !prev)}
           >
             {mobileOpen ? (
-              <XMarkIcon className="h-6 w-6 outline-1 outline-orange-500 cursor-pointer" />
+              <XMarkIcon className="h-7 w-7 outline rounded-sm cursor-pointer" />
             ) : (
-              <Bars3Icon className="h-6 w-6 outline-1 outline-orange-500 cursor-pointer" />
+              <Bars3Icon className="h-7 w-7 outline rounded-sm cursor-pointer" />
             )}
           </Button>
         </div>
       </div>
+          
       {mobileOpen && (
-        <nav className="md:hidden bg-white text-gray-800 shadow-md outline-1 outline-black">
-          <ul className="flex flex-col p-4 space-y-2">
-            <li>
-              <Link href="/" className="block hover:underline hover:text-orange-500">
-                Home
-              </Link>
-            </li>
-            <li>
-              <Link href="/products" className="block hover:underline hover:text-orange-500">
-                Products
-              </Link>
-            </li>
-            <li>
-              <Link href="/checkout" className="block hover:underline hover:text-orange-500">
-                Checkout
-              </Link>
-            </li>
+        <nav className="md:hidden bg-[#ffffff] text-[#614943] shadow-md opacity-90 rounded-b-lg transition-all duration-300">
+          <ul className="flex flex-col p-4">
+            {[
+              { href: "/", label: "Home" },
+              { href: "/products", label: "Products" },
+              { href: "/checkout", label: "Checkout" },
+            ].map((item, idx, arr) => (
+              <li key={item.href} className="relative group">
+                <Link
+                  href={item.href}
+                  className="block py-3 px-2 rounded-md transition-colors duration-300 hover:bg-[#b3cdd7] hover:text-[#117192] font-semibold"
+                >
+                  {item.label}
+                </Link>
+                {idx < arr.length - 1 && (
+                  <div className="mx-2 border-b border-dashed border-[#614943] transition-all duration-300 group-hover:border-[#052a3d]"></div>
+                )}
+              </li>
+            ))}
           </ul>
         </nav>
       )}
+    
     </nav>
   );
 };

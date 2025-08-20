@@ -15,12 +15,21 @@ export const metadata: Metadata = {
 };
 
 export default function RootLayout({
+
   children,
 }: Readonly<{
   children: React.ReactNode;
 }>) {
+
+
+  
   return (
+
+    
     <html lang="en">
+          
+    
+      
       <body
         className="flex min-h-screen flex-col bg-white overflow-x-hidden"
       >
@@ -29,6 +38,8 @@ export default function RootLayout({
       <main className="container mx-auto px-4 py-8">  {children} </main>
       <Footer />
       </body>
+
+     
     </html>
   );
 }

@@ -11,7 +11,6 @@ import { BellAlertIcon, HomeModernIcon, SparklesIcon } from "@heroicons/react/24
 
 
 
-
 const Categories = [
   "All",
   "Electronic",
@@ -22,7 +21,7 @@ const Categories = [
 ];
 
 export default async function Home() {
-  
+
  
   const products = await stripe.products.list({
     expand: ["data.default_price"],
@@ -34,7 +33,7 @@ export default async function Home() {
       <section className="rounded-xl bg-gray-100 py-8 sm:py-12">
         <div className="mx-auto grid grid-cols-1 items-center justify-items-center gap-8 px-8 sm:px-16 md:grid-cols-2">
           <div className="max-w-md space-y-4">
-            <h2 className="text-3xl text-gray-800 font-bold tracking-tight md:text-4xl">
+            <h2 data-aos="fade-zoom-in" className="text-3xl text-gray-800 font-bold tracking-tight md:text-4xl">
             WELCOME TO VENDUZA LOCAL MARKET
             </h2>
             <p className="text-gray-800">
@@ -187,24 +186,26 @@ export default async function Home() {
         </div>
       </section>
 
-      <section className="bg-[#B3CDD7] py-12">
+      <section className="bg-[url('/apple.jpg')] bg-cover bg-center py-12">
           <div className="max-w-3xl mx-auto px-4">
           <h2 className="text-3xl font-bold text-gray-800 mb-4 text-center">Contact Us</h2>
           <p className="text-gray-600 mb-8 text-center">
             Have questions or feedback? Reach out to us or subscribe to our newsletter!
           </p>
-          <form className="bg-gradient-to-br from-[#052A3D] via-[#117192] to-[#19D1E6] rounded-lg shadow-md text-white p-6 mb-8">
+          <form className="bg-gradient-to-tr from-[#052A3D] via-[#117192] to-[#19D1E6] rounded-lg shadow-md text-white p-6 mb-8">
+            <div></div>
             <div className="mb-4">
               <label className="block text-white mb-2" htmlFor="name">Name</label>
               <input
                 type="text"
                 id="name"
+                autoComplete="name"
                 className="w-full px-4 py-2 border rounded-md focus:outline-none focus:ring-2 focus:ring-blue-500"
                 placeholder="Your Name"
               />
             </div>
             <div className="mb-4">
-              <label className="block text-gray-700 mb-2" htmlFor="email">Email</label>
+              <label className="block text-white mb-2" htmlFor="email">Email</label>
               <input
                 type="email"
                 id="email"
@@ -213,7 +214,7 @@ export default async function Home() {
               />
             </div>
             <div className="mb-4">
-              <label className="block text-gray-700 mb-2" htmlFor="message">Message</label>
+              <label className="block text-white mb-2" htmlFor="message">Message</label>
               <textarea
                 id="message"
                 className="w-full px-4 py-2 border rounded-md focus:outline-none focus:ring-2 focus:ring-blue-500"
@@ -223,12 +224,12 @@ export default async function Home() {
             </div>
             <button
               type="submit"
-              className="w-full bg-blue-600 text-white py-2 rounded-md hover:bg-blue-700 transition"
+              className="w-full bg-[#19d1e6] text-white py-2 rounded-md hover:bg-blue-700 transition"
             >
               Send Message
             </button>
           </form>
-          <div className="bg-gradient-to-bl from-[#117192] to-[#b3cdd7] rounded-lg shadow-md text-white p-6">
+          <div className="bg-[#117192] rounded-lg shadow-md text-white p-6">
             <h3 className="text-xl font-semibold text-[#b3cdd7] mb-2 text-center">Subscribe to our Newsletter</h3>
             <form className="flex flex-col sm:flex-row gap-4 items-center justify-center">
               <input
@@ -238,7 +239,7 @@ export default async function Home() {
               />
               <button
                 type="submit"
-                className="bg-[#19d1e6] text-white px-6 py-2 rounded-md hover:bg-green-700 transition"
+                className="bg-[#19d1e6] text-white px-6 py-2 rounded-md hover:bg-blue-700 cursor-pointer transition"
               >
                 Subscribe
               </button>

@@ -29,7 +29,7 @@ export default function CheckoutPage() {
   return (
     <div className="container mx-auto px-4 py-8">
       <h1 className="text-3xl text-gray-800 font-bold mb-8 text-center">Checkout</h1>
-      <Card className="max-w-md mx-auto mb-8">
+      <Card className="max-w-md border-gray-700 mx-auto mb-8">
         <CardHeader>
           <CardTitle className="text-xl text-gray-800 font-bold">Order Summary</CardTitle>
         </CardHeader>
@@ -66,14 +66,14 @@ export default function CheckoutPage() {
               </li>
             ))}
           </ul>
-          <div className="mt-4 border-t pt-2 text-lg font-semibold">
+          <div className="mt-4 border-b pt-2 pl-52 text-lg font-semibold">
             Total: MK{(total / 100).toFixed(2)}
           </div>
         </CardContent>
       </Card>
       <form action={checkoutAction} className="max-w-md mx-auto space-y-3">
         <input type="hidden" name="items" value={JSON.stringify(items)} />
-        <Button type="submit" variant="default" className="w-full  text-gray-100 bg-orange-500 cursor-pointer">
+        <Button type="submit" variant="default" className="w-full  text-gray-100 bg-[#19d1e6] cursor-pointer">
           Proceed to Payment
         </Button>
         <Button onClick={() => clearCart()}  variant="default" className="w-full text-gray-100 bg-black cursor-pointer">

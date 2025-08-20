@@ -55,7 +55,7 @@ export const Navbar = () => {
           <Link href="/checkout" className="relative">
             <ShoppingCartIcon className="h-6 w-6" />
             {cartCount > 0 && (
-              <span className="absolute -top-2 -right-2 flex h-5 w-5 items-center justify-center rounded-full bg-orange-500 text-xs text-white">
+              <span className="absolute -top-2 -right-2 flex h-5 w-5 items-center justify-center rounded-full bg-[#19d1e6] text-xs text-white">
                 {cartCount}
               </span>
             )}

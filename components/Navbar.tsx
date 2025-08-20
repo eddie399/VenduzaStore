@@ -75,7 +75,7 @@ export const Navbar = () => {
       </div>
           
       {mobileOpen && (
-        <nav className="md:hidden bg-[#ffffff] text-[#614943] shadow-md opacity-90 rounded-b-lg transition-all duration-300">
+        <nav className="md:hidden bg-[#ffffff] text-[#614943] shadow-md bg-opacity-90 transition-all duration-300">
           <ul className="flex flex-col p-4">
             {[
               { href: "/", label: "Home" },

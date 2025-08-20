@@ -40,8 +40,8 @@ export const Carousel = ({ products} : Props) => {
                 </div>
             )}
             <CardContent className='absolute inset-0 flex flex-col items-center justify-center bg-black bg-opacity-50'>
-                <CardTitle className='text-3xl font-bold text-white mb-2'>{currentProduct.name}</CardTitle>
-                {price && price.unit_amount && (<p className='text-xl text-white'>  MK{(price.unit_amount / 100).toLocaleString('en-MW', { minimumFractionDigits: 2, maximumFractionDigits: 2 })}</p>)}
+                <CardTitle className='text-3xl font-bold text-cyan-900 mb-2'>{currentProduct.name}</CardTitle>
+                {price && price.unit_amount && (<p className='text-xl text-cyan-900'>  MK{(price.unit_amount / 100).toLocaleString('en-MW', { minimumFractionDigits: 2, maximumFractionDigits: 2 })}</p>)}
             </CardContent>
         </Card>
     )
